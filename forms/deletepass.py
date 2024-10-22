@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import Listbox, Scrollbar, messagebox
+
 from data.dbfunc import returnapps,deletedata
 
 
@@ -15,7 +16,7 @@ def open_delete_password_form():
             deletedata(selected_app)
             listbox.delete(selected_index)  
         else:
-            messagebox.showwarning("Warning", "Please select an application to delete.")
+            messagebox.showerror("App not selected", "Please select an application to delete.")
 
 
     delete_window = tk.Tk()
