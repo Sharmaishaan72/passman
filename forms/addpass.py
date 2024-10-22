@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
-from data.dbfunc import write
+from data.dbfunc import write,returnapps
 
 def open_add_password_form():
     
@@ -39,8 +39,11 @@ def open_add_password_form():
         application = entry_application.get()
 
         #place to run function for adding to db
-        write(application,login,password)
-        messagebox.showinfo("Info", f"Added Login: {login}\nApplication: {application}")
+        if application not in returnapps():
+            write(application,login,password)
+            messagebox.showinfo("Info", f"Added Login: {login}\nApplication: {application}")
+        else:
+            messagebox.showerror("Application already exists","The application already exists in the database , \nplease try again with a new application name\n\n\nNote: Each application name should be unique and represents a unique key")
 
 
     button_add = tk.Button(add_password_window, text="Add To Database", font=("Arial", 12), command=add_to_database)
