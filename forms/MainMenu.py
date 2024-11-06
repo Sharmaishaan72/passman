@@ -37,7 +37,7 @@ def open_main_menu():
     button_add_password = tk.Button(root, text="Click Here To Add New Passwords", width=40, command=add_new_password)
     button_add_password.pack(pady=10)
 
-    #this returns the username of the admin
+    #this returns the login of the device
     username = os.getlogin()
 
 
