@@ -43,7 +43,7 @@ def open_search_password_form():
     
     entry_frame = tk.Frame(search_window)
     entry = tk.Entry(entry_frame, font=("Arial", 12))
-    entry.pack(side=tk.LEFT, padx=10)
+    entry.pack(side=tk.RIGHT, padx=20, pady=20)
 
     listbox_frame = tk.Frame(search_window)
     scrollbar = Scrollbar(listbox_frame, orient=tk.VERTICAL)
